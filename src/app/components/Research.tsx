@@ -40,7 +40,7 @@ export default function Research({ mousePosition }: ResearchProps) {
               transform: `perspective(1000px) rotateY(${mousePosition.x * 5}deg)`
             }}
           >
-            <h2 className="text-5xl md:text-6xl bg-gradient-to-r from-[#00aaff] via-[#a855f7] to-[#00aaff] bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-6xl bg-gradient-to-r from-[#00aaff] via-[#a855f7] to-[#00aaff] bg-clip-text text-transparent">
               Research Publications
             </h2>
             <motion.div 

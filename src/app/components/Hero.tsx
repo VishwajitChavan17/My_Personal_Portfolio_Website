@@ -32,8 +32,8 @@ export default function Hero({ mousePosition }: HeroProps) {
             key={i}
             className="absolute rounded-full border border-[#00aaff]/20"
             style={{
-              width: `${300 + i * 150}px`,
-              height: `${300 + i * 150}px`,
+              width: `${Math.min(window.innerWidth * 0.8, 300 + i * 150)}px`,
+              height: `${Math.min(window.innerWidth * 0.8, 300 + i * 150)}px`,
               transform: `perspective(1000px) rotateX(${60 + mousePosition.y * 10}deg) rotateZ(${mousePosition.x * 20}deg)`
             }}
             animate={{
@@ -69,7 +69,7 @@ export default function Hero({ mousePosition }: HeroProps) {
           }}
         >
           <div 
-            className="w-48 h-48 mx-auto rounded-full relative"
+            className="w-32 h-32 md:w-48 md:h-48 mx-auto rounded-full relative"
             style={{
               transform: `perspective(1000px) rotateY(${mousePosition.x * 15}deg) rotateX(${mousePosition.y * 15}deg)`,
               transition: 'transform 0.3s ease-out'
@@ -93,8 +93,8 @@ export default function Hero({ mousePosition }: HeroProps) {
                   left: '50%'
                 }}
                 animate={{
-                  x: Math.cos((i / 6) * Math.PI * 2) * 120,
-                  y: Math.sin((i / 6) * Math.PI * 2) * 120
+                  x: Math.cos((i / 6) * Math.PI * 2) * (window.innerWidth < 768 ? 80 : 120),
+                  y: Math.sin((i / 6) * Math.PI * 2) * (window.innerWidth < 768 ? 80 : 120)
                 }}
                 transition={{
                   duration: 4,
@@ -114,7 +114,7 @@ export default function Hero({ mousePosition }: HeroProps) {
           transition={{ delay: 0.5 }}
         >
           <motion.h1 
-            className="text-5xl md:text-7xl mb-6 bg-gradient-to-r from-white via-[#00aaff] to-white bg-clip-text text-transparent"
+            className="text-4xl md:text-7xl mb-6 bg-gradient-to-r from-white via-[#00aaff] to-white bg-clip-text text-transparent px-2"
             style={{
               transform: `translateY(${mousePosition.y * 5}px)`
             }}

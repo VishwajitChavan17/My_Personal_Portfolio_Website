@@ -79,7 +79,7 @@ export default function Hackathons({ mousePosition }: HackathonsProps) {
               transform: `perspective(1000px) rotateY(${mousePosition.x * 5}deg)`
             }}
           >
-            <h2 className="text-5xl md:text-6xl bg-gradient-to-r from-[#FFD700] via-[#00aaff] to-[#a855f7] bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-6xl bg-gradient-to-r from-[#FFD700] via-[#00aaff] to-[#a855f7] bg-clip-text text-transparent">
               Hackathons & Achievements
             </h2>
             <motion.div 

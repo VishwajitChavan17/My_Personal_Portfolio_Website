@@ -69,7 +69,7 @@ export default function Patents({ mousePosition }: PatentsProps) {
               />
 
               {/* Card Container */}
-              <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-10 overflow-hidden">
+              <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-6 md:p-10 overflow-hidden">
                 {/* Particle effects */}
                 <div className="absolute inset-0 pointer-events-none">
                   {[...Array(15)].map((_, i) => (

@@ -72,33 +72,35 @@ export default function Navigation({ activeSection, setActiveSection }: Navigati
             </div>
 
             {/* Mobile Navigation */}
-            <div className="md:hidden flex items-center gap-1">
-              {navItems.map((item) => {
-                const Icon = item.icon;
-                const isActive = activeSection === item.id;
-                
-                return (
-                  <motion.button
-                    key={item.id}
-                    onClick={() => setActiveSection(item.id)}
-                    className={`relative p-2 rounded-full transition-all ${
-                      isActive 
-                        ? 'text-white' 
-                        : 'text-white/60'
-                    }`}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeMobileTab"
-                        className="absolute inset-0 bg-gradient-to-r from-[#00aaff] to-[#a855f7] rounded-full"
-                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                      />
-                    )}
-                    <Icon className="w-5 h-5 relative z-10" />
-                  </motion.button>
-                );
-              })}
+            <div className="md:hidden overflow-x-auto no-scrollbar flex items-center gap-1 max-w-[280px]">
+              <div className="flex items-center gap-1 min-w-max px-2">
+                {navItems.map((item) => {
+                  const Icon = item.icon;
+                  const isActive = activeSection === item.id;
+                  
+                  return (
+                    <motion.button
+                      key={item.id}
+                      onClick={() => setActiveSection(item.id)}
+                      className={`relative p-3 rounded-full transition-all ${
+                        isActive 
+                          ? 'text-white' 
+                          : 'text-white/60'
+                      }`}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeMobileTab"
+                          className="absolute inset-0 bg-gradient-to-r from-[#00aaff] to-[#a855f7] rounded-full"
+                          transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                        />
+                      )}
+                      <Icon className="w-5 h-5 relative z-10" />
+                    </motion.button>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </motion.div>
